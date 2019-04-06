@@ -3,7 +3,7 @@
 ## Install
 
 ````
-git clone 
+git clone git@github.com:kpicaza/antidot-docs.git
 ````
 
 ## Requirements
