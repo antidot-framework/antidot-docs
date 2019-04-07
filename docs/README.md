@@ -520,13 +520,221 @@ return [
 
 ## Config
 
+The configuration system uses Zend Config Aggregator strategy, this allow us to create complex configs and dependencies depending on environment, by default it load first php config files and then it parses yaml files merging all in an unique array of data who is available inside the container keyed by `config`
+
+````php
+<?php
+
+/** @var Psr\ContainerInterface $config */
+$config = $container->get('config');
+````
+
+
+<!-- tabs:start -->
+
+#### ** Symfony style yaml **
+
+````yaml
+# config/autoload/dependencies.{prod,local,dev}.yaml
+parameters:
+  some.key: Some value
+  other.key: 
+    array: of values
+    array1: 
+      item1: value
+      item2: value
+
+````
+
+#### ** Zend style yaml **
+
+````yaml
+# config/autoload/dependencies.{prod,local,dev}.yaml
+some.key: Some value
+other.key: 
+  array: of values
+  array1: 
+    item1: value
+    item2: value
+
+````
+
+#### ** Symfony style php **
+
+````php
+<?php
+// config/autoload/dependencies.{prod,dev,local}.php
+
+declare(strict_types=1);
+
+return [
+    'parameters' => [
+        'some.key' => 'Some value',
+        'other.key' => [
+            'array' => 'of values',
+            'array1' => [
+                'item1' => 'value',
+                'item2' => 'value',
+            ]
+        ]
+    ]
+];
+````
+
+#### ** Zend style php **
+
+````php
+<?php
+// config/autoload/dependencies.{prod,dev,local}.php
+
+declare(strict_types=1);
+
+return [
+    'some.key' => 'Some value',
+    'other.key' => [
+        'array' => 'of values',
+        'array1' => [
+            'item1' => 'value',
+            'item2' => 'value',
+        ]
+    ]
+];
+````
+
+<!-- tabs:end -->
+
+
 ## Logger
 
 > https://github.com/kpicaza/antidot-logger
 
+[Psr 3 Logger](https://github.com/php-fig/logger) implementation by Monolog.
+
+The logger is available as `Psr\Log\LoggerInterface` you can inject in your services constructors out of the box.
+
 ### Config
 
+<!-- tabs:start -->
+
+#### ** Symfony style yaml **
+
+````yaml
+# config/autoload/dependencies.{prod,local,dev}.yaml
+parameters:
+  monolog:
+    handlers:
+      default:
+        type: 'stream'
+        options:
+          stream: 'var/log/%date%-default.log'
+          level: 400
+````
+
+#### ** Zend style yaml **
+
+````yaml
+# config/autoload/dependencies.{prod,local,dev}.yaml
+monolog:
+  handlers:
+    default:
+      type: 'stream'
+      options:
+        stream: 'var/log/%date%-default.log'
+        level: 400
+````
+
+#### ** Symfony style php **
+
+````php
+<?php
+// config/autoload/dependencies.{prod,dev,local}.php
+
+declare(strict_types=1);
+
+use Monolog\Logger;
+
+return [
+    'parameters' => [
+        'monolog' => [
+            'handlers' => [
+                'default' => [
+                    'type' => 'stream',
+                    'options' => [
+                        'stream' => 'var/log/%date%-default.log',
+                        'level' => Logger::DEBUG,
+                    ]
+                ]    
+            ]
+        ]
+    ]
+];
+````
+
+#### ** Zend style php **
+
+````php
+<?php
+// config/autoload/dependencies.{prod,dev,local}.php
+
+declare(strict_types=1);
+
+use Monolog\Logger;
+
+return [
+    'monolog' => [
+        'handlers' => [
+            'default' => [
+                'type' => 'stream',
+                'options' => [
+                    'stream' => 'var/log/%date%-default.log',
+                    'level' => Logger::DEBUG,
+                ]
+            ]    
+        ]
+    ]
+];
+````
+
+<!-- tabs:end -->
+
+See [wshafer/monolog]() for full options and handlers support.
+
 ### Usage
+
+For example the usage of the Logger inner Request Handler
+
+````php
+<?php
+// src/Application/Http/Handler/HomePageRequestHandler.php
+
+declare(strict_types=1);
+
+namespace App\Application\Http\Handler;
+
+use Psr\Http\Message\ResponseInterface;
+use Psr\Http\Message\ServerRequestInterface;
+use Psr\Http\Server\RequestHandlerInterface;
+use Psr\Log\LoggerInterface;
+use Zend\Diactoros\Response\HtmlResponse;
+
+class HomePageRequestHandler implements RequestHandlerInterface
+{
+    /** @var LoggerInterface */
+    private $logger;
+
+    public function __construct(LoggerInterface $logger)
+    {
+        $this->logger = $logger;
+    }
+
+    public function handle(ServerRequestInterface $request): ResponseInterface
+    {
+        $this->logger->debug('Something happened to be logged.');
+
+        return new HtmlResponse('<html><body><h1>Hello World!!!!</h1></body></html>');
+    }
+}
+````
 
 ## Event System
 
@@ -534,7 +742,7 @@ return [
 
 [Psr 14 Event dispatcher](https://github.com/php-fig/event-dispatcher) implementation.
 
-The event dispatched is available as `Psr\EventDispatcherInterface` you can inject in your services constructors out of the box.
+The event dispatcher is available as `Psr\EventDispatcher\EventDispatcherInterface` you can inject in your services constructors out of the box.
 
 ### Config
 
@@ -644,7 +852,7 @@ class HomePageRequestHandler implements RequestHandlerInterface
     {
         $this->eventDispatcher->dispatch(SomeEvent::occur());
 
-        return new HtmlResponse('<html><body><h1>Hola mundo</h1></body></html>');
+        return new HtmlResponse('<html><body><h1>Hello World!!!!</h1></body></html>');
     }
 }
 ````
@@ -699,6 +907,23 @@ final class SomeEvent extends Event
     }
 }
 ````
+
+## Console Line Tool
+
+The CLI component is available in `bin/console` file, you can watch listed commands executing it in a terminal
+
+````bash
+bin/console 
+````
+
+![Command list](/images/cli-list.jpg)
+
+### Show Container Command
+
+````php
+bin console config:show:container
+````
+![Show container command](/images/cli-show-container.jpg)
 
 ###### Disclaimer: 
 
