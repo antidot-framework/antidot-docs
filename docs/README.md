@@ -5,7 +5,7 @@ This framework is based on concepts and components of other open source software
 
 ## Key Features
 
-* **Preconfigured Coding Stile**: [Psr-1](https://www.php-fig.org/psr/psr-1) and [Psr-2](https://www.php-fig.org/psr/psr-2) code sniffer to help respecting standard
+* **Preconfigured Coding Style**: [Psr-1](https://www.php-fig.org/psr/psr-1) and [Psr-2](https://www.php-fig.org/psr/psr-2) code sniffer to help to respect standard
 * **Logger**: [Psr-3](https://www.php-fig.org/psr/psr-3) implementation by [wshafer/monolog](https://github.com/wshafer/psr11-monolog)
 * **Auto-loading**: [Psr-4](https://www.php-fig.org/psr/psr-4) Namespaces auto-loading
 * **Request Response Lifecycle**: [Psr-7](https://www.php-fig.org/psr/psr-7) Request and responses using [Zend Diactoros](https://docs.zendframework.com/zend-diactoros/)
@@ -59,7 +59,7 @@ README.md
 
 ### Running PHP build in web server
 
-PHP provides us a built in web server witch is cool for development purposes
+PHP provides us a built-in web server which is cool for development purposes
 
 ````bash
 php -S 127.0.0.1 -t public
@@ -68,13 +68,13 @@ php -S 127.0.0.1 -t public
 
 ## Routing
 
-The routing system gives two levels of pipelines, [Global Pipeline](/#Global-Pipeline) and [Routed Pipeline](/#Routed-Pipeline)
+The routing system gives two levels of pipelines, [Global Pipeline](/#Global-Pipeline), and [Routed Pipeline](/#Routed-Pipeline)
 
 ### Global Pipeline
 
-Consist in a middleware collection that encapsulates complete lifecycle from the begin of the HTTP Request to the en of the HTTP Response
+Consist in a middleware collection that encapsulates complete lifecycle from the begin of the HTTP Request to the end of the HTTP Response
 
-This image from [Slim Framework]() documentation describes perfectly the Middleware pattern
+This image from [Slim Framework](http://www.slimframework.com/docs/v3/concepts/middleware.html) documentation describes perfectly the Middleware pattern
 
 ![Middleware](/images/middleware.png)
 
@@ -102,7 +102,7 @@ return static function (Application $app) : void {
 };
 ````
 
-You can add PSR-15 middleware implementations made by community or made by you. See a list off community [PSR-15 Middleware implementations](https://github.com/middlewares/psr15-middlewares) or make a search in [packagist](https://packagist.org/?query=psr-15)
+You can add PSR-15 middleware implementations made by the community or made by you. See a list off community [PSR-15 Middleware implementations](https://github.com/middlewares/psr15-middlewares) or make a search in [Packagist](https://packagist.org/?query=psr-15)
 
 ````php
 <?php
@@ -128,7 +128,7 @@ class SomeMiddleware implements MiddlewareInterface
 
 ### Routed Pipeline
 
-The **Routed Pipeline** allows us to add specific pipelines to certain routes that will run inner global pipeline
+The **Routed Pipeline** allows us to add specific pipelines to certain routes that will run inside the global pipeline
 
 The configuration file for Routed Pipeline can be found at `router/routes.php`
 
@@ -520,7 +520,7 @@ return [
 
 ## Config
 
-The configuration system uses Zend Config Aggregator strategy, this allow us to create complex configs and dependencies depending on environment, by default it load first php config files and then it parses yaml files merging all in an unique array of data who is available inside the container keyed by `config`
+The configuration system uses Zend Config Aggregator strategy, this allows us to create complex configs and dependencies depending on the environment, by default it loads first PHP config files and then it parses YAML files merging all in a unique array of data who is available inside the container keyed by `config`
 
 ````php
 <?php
@@ -602,7 +602,6 @@ return [
 ````
 
 <!-- tabs:end -->
-
 
 ## Logger
 
