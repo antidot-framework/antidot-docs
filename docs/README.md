@@ -20,7 +20,7 @@ This framework is based on concepts and components of other open source software
 
 ### Installation
 
-> https://github.com/kpicaza/antidot-starter
+> https://github.com/antidot-framework/antidot-starter
 
 Using [composer](https://getcomposer.org/doc/00-intro.md#installation-linux-unix-macos) package manager
 
@@ -55,7 +55,7 @@ README.md
 
 ## Running Application 
 
-> https://github.com/kpicaza/antidot-framework
+> https://github.com/antidot-framework/antidot-framework
 
 ### Running PHP build in web server
 
@@ -189,7 +189,7 @@ class SomeRequestHandler implements RequestHandlerInterface
 
 ## Dependency Injection
 
-> https://github.com/kpicaza/antidot-symfony-config.translator
+> https://github.com/antidot-framework/antidot-symfony-config-translator
 
 Auto wired dependency injection system, the only thing you have to do is declare dependencies in `config/autoload/` directory
 
@@ -605,7 +605,7 @@ return [
 
 ## Logger
 
-> https://github.com/kpicaza/antidot-logger
+> https://github.com/antidot-framework/antidot-logger
 
 [Psr 3 Logger](https://github.com/php-fig/logger) implementation by Monolog.
 
@@ -737,7 +737,7 @@ class HomePageRequestHandler implements RequestHandlerInterface
 
 ## Event System
 
-> https://github.com/kpicaza/antidot-event-dispatcher
+> https://github.com/antidot-framework/antidot-event-dispatcher
 
 [Psr 14 Event dispatcher](https://github.com/php-fig/event-dispatcher) implementation.
 
@@ -908,6 +908,8 @@ final class SomeEvent extends Event
 ````
 
 ## Console Line Tool
+
+> https://github.com/antidot-framework/antidot-cli
 
 The CLI component is available in `bin/console` file, you can watch listed commands executing it in a terminal
 
