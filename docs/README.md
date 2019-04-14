@@ -373,7 +373,7 @@ return [
     'dependencies' => [
         'conditionals' => [
             Full\Qualified\ClassName::class => [
-                'class' => Full\Qualified\ClassNameFactory::class,
+                'class' => Full\Qualified\ClassName::class,
                 'arguments' => [
                     '$foo' => Full\Qualified\ClassNameFactory::class,
                     '$bar' => 'some.string',
