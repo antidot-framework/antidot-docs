@@ -226,7 +226,9 @@ declare(strict_types=1);
 
 return [
     'services' => [
-        Full\Qualified\ClassName::class => Full\Qualified\ClassName::class,
+        Full\Qualified\ClassName::class => [
+            'class' => Full\Qualified\ClassName::class
+        ],
     ]
 ];
 ````
@@ -322,8 +324,7 @@ services:
   Full\Qualified\ClassName:  
     arguments:
       $foo: '@SomeService'
-      $bar: 'Some.String'
-      $daz: '%config.some_parameter%'
+      $bar: '%config.some_parameter%'
 
 ````
 
@@ -399,7 +400,7 @@ services:
     class: Full\Qualified\ClassName
   # Or using aliases
   Full\Qualified\AnotherClassNameInterface:
-    alias: '@service.name'
+    alias: 'service.name'
 ````
 
 #### ** Zend style yaml **
@@ -429,7 +430,7 @@ return [
         ],
         // or using alias
         Full\Qualified\ClassNameInterface::class => [
-            'alias' => '@service.name'
+            'alias' => 'service.name'
         ],
     ]
 ];
