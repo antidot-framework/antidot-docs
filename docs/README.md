@@ -927,6 +927,14 @@ bin console config:show:container
 ````
 ![Show container command](/images/cli-show-container.jpg)
 
+###### Special thanks
+
+* **JetBrains:** Thanks for supporting us with the All Products Pack License for Open Source
+
+<a href="https://www.jetbrains.com/?from=antidot-framework" target="_blank">
+    <img alt="JetBrains" src="/images/jetbrains-variant-4.png" style="width:263px !important;height:147px !important"/>
+</a>
+
 ###### Disclaimer: 
 
 * This framework is created for educational purposes. The full or partial use of this software is the responsibility of the user.
