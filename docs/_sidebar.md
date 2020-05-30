@@ -1,7 +1,7 @@
 <!-- docs/_sidebar.md -->
 
 * Docs
-    * [Antidot Framework](/framework/) 
+    * [Antidot Framework](/framework/getting-started.md) 
 
 * Tutorials
     * [Getting Started App](https://getting-started.antidotfw.io/)
