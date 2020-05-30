@@ -3,4 +3,4 @@
 > *PSR Compatible full featured Framework*
 
 *[Key Features](/#Key-Features)*
-*[Getting Started](/#Getting-Started)*
+*[Getting Started](/framework/)*
