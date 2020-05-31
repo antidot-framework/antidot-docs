@@ -8,6 +8,7 @@
 
 * Components
     * [Event Dispatcher](https://event-dispatcher.antidotfw.io/)
+    * [DI Container](https://di.antidotfw.io/)
     * [Console Tool](https://cli.antidotfw.io/)
     * [Logger](https://logger.antidotfw.io/)
     * [Symfony config translator](https://sf-config.antidotfw.io/)
