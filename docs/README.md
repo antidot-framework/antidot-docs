@@ -16,6 +16,15 @@ PHP full featured framework designed to allow you creating 100% framework agnost
 * **Cli**: Ready to use Console Line Tool on top of [Symfony Console Tool](https://symfony.com/doc/current/components/console.html)
 
 
+## Quick Start
+
+```bash
+composer create-project antidot-fw/antidot-framework-starter project-name
+cd project-name
+bin/console
+php -S 127.0.0.1:8000 ./public
+```
+
 ## Special thanks & Sponsors
 
 * **JetBrains:** Thanks for supporting us with the All Products Pack License for Open Source

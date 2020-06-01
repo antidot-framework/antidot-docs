@@ -7,7 +7,7 @@
 Using [composer](https://getcomposer.org/doc/00-intro.md#installation-linux-unix-macos) package manager
 
 ````bash
-composer create-project antidot-fw/antidot-framework-starter:dev-master project-name
+composer create-project antidot-fw/antidot-framework-starter project-name
 ````
 
 ## File Structure
