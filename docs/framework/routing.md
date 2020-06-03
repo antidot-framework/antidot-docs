@@ -8,7 +8,7 @@ Consist in a middleware collection that encapsulates complete lifecycle from the
 
 This image from [Slim Framework](http://www.slimframework.com/docs/v3/concepts/middleware.html) documentation describes perfectly the Middleware pattern
 
-![Middleware](/../images/middleware.png)
+<img src="/../images/middleware.png" alt="Middleware" style="width:300px !important"/>
 
 The config for the Global Pipeline is placed at `router/middleware.php` file.
 
