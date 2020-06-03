@@ -3,6 +3,7 @@
     * [Getting Started](/framework/getting-started.md "Getting started guide for Antidot Framework")
     * [Running Application](/framework/running-application.md "Running guide for Antidot Framework")
     * [Routing](/framework/routing.md)
+    * [Templating](/framework/templating.md)
     * [Dependency Injection](/framework/dependency-injection.md)
     * [Logger](/framework/logger.md)
     * [Event System](/framework/event-system.md)

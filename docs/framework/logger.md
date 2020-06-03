@@ -1,4 +1,4 @@
-## Logger
+# Logger
 
 > https://github.com/antidot-framework/antidot-logger
 
