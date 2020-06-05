@@ -8,24 +8,110 @@ The CLI component is available in `bin/console` file, you can watch listed comma
 bin/console 
 ````
 
-![Command list](/../images/cli-list.jpg)
+![Command list](/../images/cli-list.png)
 
 ## Show Container Command
 
-````php
-bin console config:show:container
-````
-![Show container command](/../images/cli-show-container.jpg)
+Shows all configured dependencies in a table.
+
+```bash
+bin/console config:show:container
+```
+![Show container command](/../images/cli-show-container.png)
 
 ## Clear Config Cache
 
-````php
-bin console config:clear-cache
-````
+Removes all files at configured cache directory, by default in keys 'config_cache_path' and '''cli_config_cache_path'.
+
+```bash
+bin/console config:clear-cache
+```
+![Clear Config Cache command](/../images/clear-config-cache.png)
+
+## Development mode
+
+Enables and disables development mode.
+
+### Enable Development mode
+
+```bash
+bin/console config:development-mode
+```
+![Enable Development Mode command](/../images/enable-development-mode.png)
+
+### Disable Development mode
+
+```bash
+bin/console config:development-mode --disable=true
+```
+![Disable Development Mode command](/../images/disable-development-mode.png)
+
+## Maker Commands
+
+It has a set of useful CLI commands to facilitate the creation of different types of classes. 
+
+### Make PSR-7 Request Handler
+
+Generates an instance of Psr\Http\Server\RequestHandlerInterface and allocates in its place on the filesystem 
+respecting the given full qualified classname 
+
+```bash
+bin/console make:request-handler 'App\Application\Http\Handler\TestRequestHandler'
+```
+![Make Request Handler command](/../images/make-request-handler.png)
+
+### Make PSR-15 Middleware
+
+Generates an instance of Psr\Http\Server\MiddlewareInterface and allocates in its place on the filesystem 
+respecting the given full qualified classname 
+
+```bash
+bin/console make:middleware 'App\Application\Http\Middleware\TestMiddleware'
+```
+![Make Middleware command](/../images/make-middleware.png)
+
+### Make Invokable Factory
+
+Generates an invokable factory and allocates in its place on the filesystem respecting the given full qualified classname 
+
+```bash
+bin/console make:factory 'App\Container\SomeFactory'
+```
+![Make Factory command](/../images/make-factory.png)
+
+### Make PSR-14 Compatible Event
+
+Generates an instance of Psr\EventDispatcher\StoppableEventInterface and allocates in its place on the filesystem 
+respecting the given full qualified classname 
+
+```bash
+bin/console make:event 'App\Domain\Event\SomethingOccurred'
+```
+![Make Event command](/../images/make-event.png)
+
+### Make Event Listener
+
+Generates an event listener class for given event name, and allocates in its place on the filesystem 
+respecting the given full qualified classname 
+
+```bash
+bin/console make:event-listener 'App\Application\Service\SomeEventListener' 'App\Domain\Event\SomethingOccurred'
+```
+![Make Event Listener command](/../images/make-event-listener.png)
+
+### Make Symfony Console Command
+
+Generates a command class compatible with Symfony console, and allocates in its place on the filesystem 
+respecting the given full qualified classname 
+
+```bash
+bin/console make:event-listener 'App\Application\Service\SomeEventListener' 'App\Domain\Event\SomethingOccurred'
+```
+![Make Console Command command](/../images/make-console-command.png)
 
 ## Custom Console Command
 
-Console tool is built in on top of Symfony Console Component, to createnew command you need to extend from Symfony 
+The Console tool, built in on top of Symfony Console Component, to create new command you need to extend from Symfony 
 Console Command Class
 
 ````php
