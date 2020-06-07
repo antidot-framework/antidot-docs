@@ -12,11 +12,19 @@ Use [PHP Pug as Template engine](https://github.com/pug-php/pug)
 
 > [Pug Template renderer](https://github.com/antidot-framework/phug-template-renderer)
 
+```bash
+composer require antidot-fw/phug-template-renderer
+```
+
 ## Twig Template Renderer
 
 Use [Twig as Template engine](https://twig.symfony.com/) 
 
 > [Twig Template renderer](https://github.com/antidot-framework/twig-template-renderer)
+
+```bash
+composer require antidot-fw/twig-template-renderer
+```
 
 ## Usage
 
