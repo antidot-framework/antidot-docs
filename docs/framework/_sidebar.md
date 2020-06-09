@@ -8,4 +8,5 @@
     * [Logger](/framework/logger.md)
     * [Event System](/framework/event-system.md)
     * [Console Line Tool](/framework/console-line-tool.md)
+    * [Modules and Third-party libraries](/framework/modules-and-third-party-libraries.md)
 
