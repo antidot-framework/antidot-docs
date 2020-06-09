@@ -29,14 +29,16 @@ new module will reside in `src/Mymodule` directory, and the module test at `test
 Antidot framework is an open-source ecosystem friendly, and it allows easily to manage third-party libraries or packages 
 making use of the [Laminas Config Provider](https://docs.laminas.dev/laminas-config-aggregator/config-providers/) component.
 
- With Composer, you can install any package available in [Packagist](https://packagist.org/), then if you want to have it available in the DI container, 
- you need to configure wanted dependency in a config file following [the config instructions](/framework/dependency-injection.md).
+ With Composer, you can install any package available in [Packagist](https://packagist.org/), then if you want to have 
+ it available in the DI container, you need to configure wanted dependency in a config file following 
+ [the config instructions](/framework/dependency-injection.md).
  
- When you want to add complex objects to the DI container you can take advantage of using factory classes, these classes
- must be invokables with a PSR-11 container interface as first parameter, and as recommendation,  
- it doesn't have to have any dependency in its constructor.
+ When you want to add complex objects to the DI container you can take advantage of using factory classes, these classes 
+ must be invokable with a PSR-11 container interface as the first parameter, and as a recommendation, it doesn't have 
+ to have any dependency in its constructor.
 
-For example integrating [Doctrine DBAL](https://www.doctrine-project.org/projects/doctrine-dbal/en/2.10/index.html) connection for MySQL:
+For example, integrating [Doctrine DBAL](https://www.doctrine-project.org/projects/doctrine-dbal/en/2.10/index.html) 
+connection for MySQL:
 
 Install it by composer
 
