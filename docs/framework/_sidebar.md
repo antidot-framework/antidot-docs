@@ -4,6 +4,7 @@
     * [Running Application](/framework/running-application.md "Running guide for Antidot Framework")
     * [Routing](/framework/routing.md)
     * [Templating](/framework/templating.md)
+    * [Persistence Layer](/framework/persitence.md)
     * [Dependency Injection](/framework/dependency-injection.md)
     * [Logger](/framework/logger.md)
     * [Event System](/framework/event-system.md)
