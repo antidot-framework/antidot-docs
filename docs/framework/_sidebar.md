@@ -8,6 +8,7 @@
     * [Dependency Injection](/framework/dependency-injection.md)
     * [Logger](/framework/logger.md)
     * [Event System](/framework/event-system.md)
+    * [Queues](/framework/queues.md)
     * [Console Line Tool](/framework/console-line-tool.md)
     * [Modules and Third-party libraries](/framework/modules-and-third-party-libraries.md)
 
