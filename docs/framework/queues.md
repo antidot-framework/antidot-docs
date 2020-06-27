@@ -10,12 +10,12 @@ composer require antidot-fw/message-queue
 
 Install a transport for the queues:
 
-* [Null Queue](https://queue.antidotfw.io/#/#null-qeue)
-* [Filesystem Queue](https://queue.antidotfw.io/#/#filesystem-qeue)
-* [DBAL Queue](https://queue.antidotfw.io/#/#dbal-qeue)
-* [Redis Queue](https://queue.antidotfw.io/#/#redis-qeue)
-* [Beanstalk](https://queue.antidotfw.io/#/#beanstalk-qeue)
-* [Amazon SQS](https://queue.antidotfw.io/#/#amazon-sqs-qeue)
+* [Null Queue](https://queue.antidotfw.io/#/?id=null-queue)
+* [Filesystem Queue](https://queue.antidotfw.io/#/?id=filesystem-queue)
+* [DBAL Queue](https://queue.antidotfw.io/#/?id=dbal-queue)
+* [Redis Queue](https://queue.antidotfw.io/#/?id=redis-queue)
+* [Beanstalk](https://queue.antidotfw.io/#/?id=beanstalk-queue)
+* [Amazon SQS](https://queue.antidotfw.io/#/?id=amazon-sqs-queue)
 
 Allow using a job queues out of the box with different queue systems.
 
