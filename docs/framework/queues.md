@@ -68,6 +68,40 @@ class HomePage implements RequestHandlerInterface
 }
 ``` 
 
+Create a Job Handler Action
+
+```php
+<?php
+
+declare(strict_types=1);
+
+namespace App;
+
+use Antidot\Queue\JobPayload;
+
+class SomeMessageTypeAction
+{
+    public function __invoke(JobPayload $payload): void
+    {
+        // do some stuff with the job payload here.
+    }
+}
+```
+
+```yaml
+services:
+  some_action_service:
+    class: App\SomeMessageTypeAction
+parameters:
+  queues:
+    contexts:
+      default:
+        message_types:
+          # message_type: action_service
+          some_message_type: some_action_service
+          other_message_type: some_action_service
+```
+
 then start listening a queue:
 
 ```bash
