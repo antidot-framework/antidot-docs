@@ -1,6 +1,6 @@
 # Persistence Layer
 
-Antidot Framework doesn't have any persistence layer defined, it left the decision o where and how you want to store and consume your data.
+Antidot Framework doesn't have any persistence layer defined, it is left to the decision of the user where and how you want to store and consume your data.
 Anyway, we provide some adapters to use out of the box for the most popular persistence libraries.
 
 ## Doctrine DBAL Adapter
