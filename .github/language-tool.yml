@@ -1,2 +1,0 @@
-- name: Run LanguageTool with reviewdog
-  uses: reviewdog/action-languagetool@v1.0.3
