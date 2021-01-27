@@ -2,7 +2,7 @@ name: reviewdog
 on: [pull_request]
 jobs:
   linter_name:
-    name: runner / reviewdog/action-misspell
+    name: reviewdog/action-misspell
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
@@ -12,4 +12,4 @@ jobs:
           # Change reviewdog reporter if you need [github-pr-check,github-check,github-pr-review].
           reporter: github-pr-review
           # Change reporter level if you need.
-          level: infoanguagetool@v1.0.3
+          level: error
