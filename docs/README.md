@@ -1,6 +1,6 @@
 # Antidot Framework
 
-PHP full featured framework designed to allow you creating 100% framework agnostic code.
+A PHP full featured micro-framework designed to allow you to write 100% framework agnostic code.
 
 ## Key Features
 
