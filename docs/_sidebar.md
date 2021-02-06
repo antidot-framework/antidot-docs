@@ -14,3 +14,4 @@
     * [Queues](https://queue.antidotfw.io/)
     * [Symfony config translator](https://sf-config.antidotfw.io/)
     * [Template Renderer](https://template.antidotfw.io/)
+    * [React Framework](https://react.antidotfw.io/)
