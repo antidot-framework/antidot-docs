@@ -2,12 +2,22 @@
 
 ## Installation
 
+### Standard Version
+
 > https://github.com/antidot-framework/antidot-starter
 
 Using [composer](https://getcomposer.org/doc/00-intro.md#installation-linux-unix-macos) package manager
 
 ````bash
 composer create-project antidot-fw/antidot-framework-starter project-name
+````
+
+### ReactPHP Version
+
+> https://github.com/antidot-framework/antidot-starter
+
+````bash
+composer create-project antidot-fw/reactive-starter project-name
 ````
 
 ## File Structure
