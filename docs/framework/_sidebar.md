@@ -2,7 +2,6 @@
 * **Docs**
     * [Getting Started](/framework/getting-started.md "Getting started guide for Antidot Framework")
     * [Running Application](/framework/running-application.md "Running guide for Antidot Framework")
-    * [Serverless](/framework/serverless.md "Serverless guide for Antidot Framework using Bref.sh")  
     * [Routing](/framework/routing.md)
     * [Templating](/framework/templating.md)
     * [Persistence Layer](/framework/persitence.md)
