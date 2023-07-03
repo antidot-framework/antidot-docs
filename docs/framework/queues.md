@@ -88,18 +88,24 @@ class SomeMessageTypeAction
 }
 ```
 
-```yaml
-services:
-  some_action_service:
-    class: App\SomeMessageTypeAction
-parameters:
-  queues:
-    contexts:
-      default:
-        message_types:
-          # message_type: action_service
-          some_message_type: some_action_service
-          other_message_type: some_action_service
+```php
+<?php
+
+return [
+    'services' => [
+        'some_action_service' => \App\SomeMessageTypeAction::class, 
+    ],
+    'queues' => [
+        'contexts' => [
+            'default' => [
+                'message_types' => [
+                     'some_message_type' => 'some_action_service',
+                     'other_message_type' => 'some_action_service',
+                ]
+            ]
+        ]
+    ]
+];
 ```
 
 then start listening a queue:

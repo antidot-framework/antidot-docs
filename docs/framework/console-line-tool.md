@@ -144,56 +144,6 @@ final class SomeCommand extends Command
 
 ## Config
 
-<!-- tabs:start -->
-
-### ** Symfony style yaml **
-
-````yaml
-# config/autoload/dependencies.{prod,local,dev}.yaml
-services:
-  App\Application\EventListener\SomeCommand:
-  tags:
-    - { name: 'console.command', command: 'some:command:name' }
-````
-
-### ** Zend style yaml **
-
-````yaml
-# config/autoload/dependencies.{prod,local,dev}.yaml
-console:
-  commands:
-    'some:command:name': App\Application\EventListener\SomeCommand
-dependencies:
-  invokables:
-    App\Application\EventListener\SomeCommand: App\Application\EventListener\SomeCommand
-    
-````
-
-### ** Symfony style php **
-
-````php
-<?php
-// config/autoload/dependencies.{prod,dev,local}.php
-
-declare(strict_types=1);
-
-return [
-    'services' => [
-        App\Application\EventListener\SomeCommand::class => [
-          'class' => App\Application\EventListener\SomeCommand::class,
-          'tags' => [
-            [
-                'name' => 'console.command', 
-                'command' => App\Application\EventListener\SomeCommand::NAME
-            ]    
-          ]
-        ]  
-    ]
-];
-````
-
-### ** Zend style php **
-
 ````php
 <?php
 // config/autoload/dependencies.{prod,dev,local}.php
@@ -215,5 +165,3 @@ return [
     ]
 ];
 ````
-
-<!-- tabs:end -->

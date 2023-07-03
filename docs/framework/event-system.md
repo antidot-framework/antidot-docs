@@ -8,55 +8,6 @@ The event dispatcher is available as `Psr\EventDispatcher\EventDispatcherInterfa
 
 ## Config
 
-<!-- tabs:start -->
-
-### ** Symfony style yaml **
-
-````yaml
-# config/autoload/dependencies.{prod,local,dev}.yaml
-services:
-  App\Application\EventListener\SomeEventListener:
-  tags:
-    - { name: 'event_listener', event: 'Full\Name\SomeEventClass' }
-````
-
-### ** Zend style yaml **
-
-````yaml
-# config/autoload/dependencies.{prod,local,dev}.yaml
-app-events:
-  event-listeners:
-    # Full\Name\To\SomeEvent or some.event.identifier
-    some-event:
-      - 'App\Application\EventListener\SomeEventListener'
-      - 'App\Application\EventListener\SomeOtherEventListener'
-````
-
-### ** Symfony style php **
-
-````php
-<?php
-// config/autoload/dependencies.{prod,dev,local}.php
-
-declare(strict_types=1);
-
-return [
-    'parameters' => [
-        'app-events' => [
-            'event-listeners' => [
-                // Full\Name\To\SomeEvent::class or some.event.identifier
-                'some-event' => [
-                    App\Application\EventListener\SomeEventListener::class,
-                    App\Application\EventListener\SomeOtherEventListener::class,
-                ]    
-            ]
-        ]
-    ]
-];
-````
-
-### ** Zend style php **
-
 ````php
 <?php
 // config/autoload/dependencies.{prod,dev,local}.php
@@ -75,8 +26,6 @@ return [
     ]
 ];
 ````
-
-<!-- tabs:end -->
 
 ## Usage
 
