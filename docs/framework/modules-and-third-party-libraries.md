@@ -74,23 +74,23 @@ class DoctrineDBALFactory
 
 Register factory in the [Dependency Injection Container](/framework/dependency-injection.md) and add config parameter to it.
 
-```yaml
-# See dependency injection container config docs to more info about service 
-# configuration https://antidotfw.io/framework/dependency-injection.md.
-parameters:
-  dbal:
-    connection:
-      dbname: db_name
-      user: db_user
-      password: db_secret
-      host: localhost
-      port: 3306
-      driver: pdo_mysql
-      options:
-        # this enables PDO to throw exceptions
-        3: 2
-
-services:
-    Doctrine\DBAL\Connection:
-      factory: App\Container\DoctrineDBALFactory
+```php
+<?php
+// See dependency injection container config docs to more info about service 
+// configuration https://antidotfw.io/framework/dependency-injection.md.
+return [
+    'dbal' => [
+        'connection' => [
+            'dbname' => 'db_name',
+            'user' => 'db_user',
+            'password' => 'db_secret',
+            'host' => 'localhost',
+            'port' => '3306',
+            'driver' => 'pdo_mysql',
+        ]
+    ],
+    'factories' => [
+        \Doctrine\DBAL\Connection::class => \App\Container\DoctrineDBALFactory::class,
+    ],
+];
 ```
