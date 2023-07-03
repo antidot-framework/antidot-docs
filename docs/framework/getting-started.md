@@ -314,10 +314,6 @@ relevant documentation for those components to ensure proper configuration.
 
 ---
 
-Apologies for the confusion. Here's an updated version of the "Dependency Injection" section for the Antidot PHP Framework based on the old Antidot framework documentation:
-
----
-
 ## Dependency Injection
 
 The Antidot PHP Framework leverages the powerful [PSR-11](https://www.php-fig.org/psr/psr-11/) container 
